@@ -28,5 +28,8 @@ int     ft_strlen(char *str);
 char    *ft_strdup(char *src);
 char    *ft_strcpy( char *destptr, const char *srcptr);
 char    *ft_strncpy(char *destptr, const char *srcptr, size_t num);
+void    ft_putchar(char c);
+int     ft_toupper(int character);
+int     ft_tolower(int character);
 
 #endif
