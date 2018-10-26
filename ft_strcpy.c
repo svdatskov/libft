@@ -10,4 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char	*ft_strcpy( char *destptr, const char *srcptr)
+{
+	int i;
+
+	i = 0;
+	while (srcptr[i] != '\0')
+	{
+		destptr[i] = srcptr[i];
+		i++;
+	}
+	destptr[i] = '\0';
+	return (destptr);
+}
