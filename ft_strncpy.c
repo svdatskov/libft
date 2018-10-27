@@ -15,18 +15,26 @@
 char	*ft_strncpy(char *destptr, const char *srcptr, size_t num)
 {
 	size_t i;
+	size_t j;
 
 	i = 0;
+	j = ft_strlen(srcptr);
+	if (j <= num)
+	{
+		while (i < num)
+		{
+			if (i < j)
+				destptr[i] = srcptr[i];
+			else if (i < num)
+				destptr[i] = '\0';
+			i++;
+		}
+		return (destptr);
+	}
 	while (i < num)
 	{
-		if(srcptr[i] == '\0' || destptr[i] == '\0')
-		{
-			destptr[i] = '\0'; 
-			return (destptr);
-		}
 		destptr[i] = srcptr[i];
 		i++;
 	}
-	destptr[i] = '\0';
 	return (destptr);
 }

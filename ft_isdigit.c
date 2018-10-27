@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/24 16:28:35 by sdatskov          #+#    #+#             */
-/*   Updated: 2018/10/24 16:28:37 by sdatskov         ###   ########.fr       */
+/*   Created: 2018/10/27 19:55:34 by sdatskov          #+#    #+#             */
+/*   Updated: 2018/10/27 19:55:35 by sdatskov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen(const char *str)
+int 	ft_isdigit(int c)
 {
-	int i;
-
-	i = 0;
-	while(*str)
-	{
-		i++;
-		str++;
-	}
-	return (i);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else 
+		return (0);
 }
