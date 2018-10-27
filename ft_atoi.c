@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_atoi(char *s)
+int	ft_atoi(const char *s)
 {
-	int res;
+	long res;
 	int minus;
 
 	res = 0;
@@ -38,9 +39,17 @@ int	ft_atoi(char *s)
 	}
 	if (minus == 1)
 		res *= -1;
-	if (res > 2147483647)
-		res = 2147483647;
-	else if (res < -2147483648)
-		res = -2147483648;
+	if (res > 2147483648)
+		return (-1);
+	if (res < -2147483649)
+		return (0);
 	return (res);
+}
+
+int main(void)
+{
+	char n[40] = "-99999999999999999999999";
+	printf("%i\n", atoi(n));
+	printf("%i\n", ft_atoi(n));
+	return(0);
 }
