@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strcat( char *destptr, const char *srcptr)
+char	*ft_strcat(char *destptr, const char *srcptr)
 {
 	int i;
 	int j;
@@ -20,7 +20,8 @@ char	*ft_strcat( char *destptr, const char *srcptr)
 	i = 0;
 	j = 0;
 	if (destptr[i] != '\0')
-		while (destptr[++i] != '\0');
+		while (destptr[i] != '\0')
+			++i;
 	if (destptr[i] == '\0')
 	{
 		while (srcptr[j] != '\0')

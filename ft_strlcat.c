@@ -1,29 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/24 16:24:21 by sdatskov          #+#    #+#             */
-/*   Updated: 2018/10/24 16:24:25 by sdatskov         ###   ########.fr       */
+/*   Created: 2018/10/28 17:44:51 by sdatskov          #+#    #+#             */
+/*   Updated: 2018/10/28 17:44:53 by sdatskov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	char	*arr;
-	size_t	i;
+	size_t len;
+	size_t size;
+	char *d;
+	const char *s;
 
-	arr = (char *)s;
-	i = 0;
-	while (i < n)
+	d = dst;
+	s = src;
+	size = dstsize;
+	while (size > 0 && *d)
 	{
-		if ((unsigned char)arr[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i++;
+		d++;
+		size--;
 	}
-	return (NULL);
+	len = d - dst;
+	size = dstsize - len;
+	if (size == 0)
+		return (len + ft_strlen(s));
+	while (*s)
+	{
+		if (size > 1) 
+		{
+			*d = *s;
+			size--;
+			d++;
+		}
+		s++;
+	}
+	*d = '\0';
+	return (len + (s - src));
 }

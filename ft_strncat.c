@@ -20,7 +20,8 @@ char	*ft_strncat(char *destptr, const char *srcptr, size_t num)
 	i = 0;
 	j = 0;
 	if (destptr[i] != '\0')
-		while (destptr[++i] != '\0');
+		while (destptr[i] != '\0')
+			++i;
 	if (destptr[i] == '\0')
 	{
 		while (srcptr[j] != '\0' && j < num)
@@ -29,4 +30,3 @@ char	*ft_strncat(char *destptr, const char *srcptr, size_t num)
 	destptr[i] = '\0';
 	return (destptr);
 }
-
