@@ -19,11 +19,13 @@ char	*ft_strrchr(const char *string, int symbol)
 
 	s = ft_strlen(string);
 	i = 0;
+	if (symbol == 0)
+		return ((char *)string + s);
 	while (s >= i)
 	{
 		if (string[s] == symbol)
 			return ((char *)string + s);
-		i++;
+		s--;
 	}
 
 	return (0);

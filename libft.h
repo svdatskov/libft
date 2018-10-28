@@ -46,4 +46,5 @@ char	*ft_strnstr(char *str, char *to_find, size_t len);
 char	*ft_strchr(const char *string, int symbol);
 char	*ft_strrchr(const char *string, int symbol);
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
+void	*ft_memalloc(size_t size);
 #endif
