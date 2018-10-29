@@ -47,4 +47,9 @@ char	*ft_strchr(const char *string, int symbol);
 char	*ft_strrchr(const char *string, int symbol);
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
 void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char    *ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_putstr(char const *s);
+void	ft_strclr(char *s);
 #endif
