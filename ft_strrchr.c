@@ -27,7 +27,5 @@ char	*ft_strrchr(const char *string, int symbol)
 			return ((char *)string + s);
 		s--;
 	}
-
 	return (0);
 }
-

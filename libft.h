@@ -6,7 +6,7 @@
 /*   By: vdanyliu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 12:35:16 by vdanyliu          #+#    #+#             */
-/*   Updated: 2018/10/28 17:40:15 by sdatskov         ###   ########.fr       */
+/*   Updated: 2018/10/30 21:16:23 by sdatskov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,13 @@ int		ft_strncmp(const char *s1, const char *s2, size_t num);
 char	*ft_strnstr(char *str, char *to_find, size_t len);
 char	*ft_strchr(const char *string, int symbol);
 char	*ft_strrchr(const char *string, int symbol);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
-char    *ft_strnew(size_t size);
+char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
 void	ft_putstr(char const *s);
 void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 #endif
