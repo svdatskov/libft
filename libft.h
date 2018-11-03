@@ -54,4 +54,5 @@ void	ft_putstr(char const *s);
 void	ft_strclr(char *s);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_itoa(int n);
 #endif
