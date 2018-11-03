@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/28 15:55:16 by sdatskov          #+#    #+#             */
-/*   Updated: 2018/10/28 15:55:18 by sdatskov         ###   ########.fr       */
+/*   Created: 2018/11/03 16:45:43 by sdatskov          #+#    #+#             */
+/*   Updated: 2018/11/03 16:45:44 by sdatskov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_strequ(char const *s1, char const *s2)
 {
 	int i;
+	int j;
+	int b;
 
+	if (!s1 || !s2)
+		return (0);
 	i = 0;
+	b = 0;
+	j = ft_strlen(s1);
 	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		if(s1[i] == s2[i])
+			b++;
 		i++;
 	}
-	return (0);
-}
+	if (b == j)
+		return (1);
+	else 
+		return (0);
+}	

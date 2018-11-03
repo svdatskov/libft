@@ -27,6 +27,8 @@ char    *ft_itoa(int n)
         len++;
     }
     	number = (char *)malloc(sizeof(char) * len + ((n < 0) ? 2 : 1));
+      if (number == NULL)
+        return (NULL);
     len = n < 0 ? len + 1 : len;
       num = n;
       if (n < 0)
