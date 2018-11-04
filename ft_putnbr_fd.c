@@ -1,28 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/28 15:59:36 by sdatskov          #+#    #+#             */
-/*   Updated: 2018/10/28 15:59:38 by sdatskov         ###   ########.fr       */
+/*   Created: 2018/11/04 15:24:31 by sdatskov          #+#    #+#             */
+/*   Updated: 2018/11/04 15:24:33 by sdatskov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *memptr, int val, size_t num)
+void	ft_pr(int i, int n, int fd)
 {
-	char *arr;
-	size_t i;
+	int j;
 
-	i = 0;
-	arr = (char *)memptr;
-	while (i < num)
+	while (i >= 1)
 	{
-		arr[i] = val;
-		i++;
+		j = n / i;
+		ft_putchar_fd(j + 48, fd);
+		n %= i;
+		i /= 10;
 	}
-	return (memptr);
+}
+
+void ft_putnbr_fd(int n, int fd)
+{
+	int i;
+	int num;
+
+	num = n;
+	i = 1;
+	while (num > 9 || num < -9)
+	{
+		i *= 10;
+		num /= 10;
+	}
+	if(n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		if (n < -2147483647)
+		{
+			ft_putchar_fd('2', fd);
+			n = -147483648;
+			i /= 10;
+		}
+		n = -n;
+	}
+	ft_pr(i, n, fd);
 }
