@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,30 +11,27 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strtrim(char const *s)
+char	**ft_strsplit(char const *s, char c)
 {
 	int i;
-	int b;
-	int j;
-	char *str;
+	int count;
 
 	i = 0;
-	j = 0;
-	if (s == NULL)
-		return (NULL);
-	b = ft_strlen(s) - 1;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	count = 0;
+	while (s[i] != '\0')
+	{
+		if(s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
+			count++;
 		i++;
-	if (s[i] == '\0')
-		return ("");
-	while (s[b] == ' ' || s[b] == '\n' || s[b] == '\t')
-		b--;
-	str = (char *)malloc(sizeof(char) * (b - (i - 1) + 1));
-	if (!str)
-		return (NULL);
-	while (i <= b)
-		str[j++] = s[i++];
-	str[j] = '\0';
-	return (str);
+	}
+	printf("%i", count);
+	return (0);
+}
+
+int main(void)
+{
+	ft_strsplit("*Hello*World*mine**serios", '*');
+	return (0);
 }
