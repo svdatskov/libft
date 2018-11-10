@@ -13,25 +13,83 @@
 #include "libft.h"
 #include <stdio.h>
 
-char	**ft_strsplit(char const *s, char c)
+char	*ft_copy(char *destptr, char *srcptr, int n)
 {
+	char *tmp;
 	int i;
-	int count;
 
 	i = 0;
-	count = 0;
-	while (s[i] != '\0')
+	tmp = destptr;
+	while (i < n && srcptr[i] != '\0')
 	{
-		if(s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
-			count++;
+		destptr[i] = srcptr[i];
 		i++;
 	}
-	printf("%i", count);
-	return (0);
+	destptr[i] = '\0';
+	return (tmp);
+}
+
+char	**ft_address(char **bufer, char *s, char c)
+{
+	char	**buf_tmp;
+	char	*buf_str;
+	char	*buf_str2;
+	int		len;
+
+	buf_tmp = bufer;
+	while (*s)
+	{
+		len = 0;
+		if (*s == c)
+			s++;
+		else
+		{
+			buf_str = s;
+			while (*s && *s != c)
+			{
+				len++;
+				s++;
+			}
+			buf_str2 = malloc(sizeof(char) * (len + 1));
+			if (buf_str2 == NULL)
+				return (NULL);
+			*bufer = ft_copy(buf_str2, buf_str, len);
+			bufer++;
+		}
+	}
+	*bufer = 0;
+	return (buf_tmp);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char	*tmp;
+	char 	**buff;
+	int		str_count;
+
+	if (!s)
+		return (NULL);
+	tmp = (char *)s;
+	str_count = 0;
+	while (*s)
+	{
+		if (*s == c)
+			s++;
+		else
+		{
+			str_count++;
+			while (*s && *s != c)
+				s++;
+		}
+	}
+	buff = malloc(sizeof(char*) * (str_count + 1));
+	if (buff == NULL)
+		return (NULL);
+	return (ft_address(buff, tmp, c));
 }
 
 int main(void)
 {
-	ft_strsplit("*Hello*World*mine**serios", '*');
+	printf("%s\n", *ft_strsplit("      split       this for   me  !       ", ' '));
 	return (0);
 }
