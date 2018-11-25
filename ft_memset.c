@@ -14,8 +14,8 @@
 
 void	*ft_memset(void *memptr, int val, size_t num)
 {
-	char *arr;
-	size_t i;
+	char	*arr;
+	size_t	i;
 
 	i = 0;
 	arr = (char *)memptr;

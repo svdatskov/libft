@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_appendix(int i, int n, int b, char *str)
+static char	*ft_appendix(int i, int n, int b, char *str)
 {
 	int j;
 
@@ -39,7 +39,7 @@ char	*ft_appendix(int i, int n, int b, char *str)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		i;
 	int		num;

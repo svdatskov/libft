@@ -13,10 +13,10 @@
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_copy(char *destptr, char *srcptr, int n)
+static char	*ft_copy(char *destptr, char *srcptr, int n)
 {
-	char *tmp;
-	int i;
+	char	*tmp;
+	int		i;
 
 	i = 0;
 	tmp = destptr;
@@ -29,7 +29,7 @@ char	*ft_copy(char *destptr, char *srcptr, int n)
 	return (tmp);
 }
 
-char	**ft_address(char **bufer, char *s, char c)
+static char	**ft_address(char **bufer, char *s, char c)
 {
 	char	**buf_tmp;
 	char	*buf_str;
@@ -61,10 +61,10 @@ char	**ft_address(char **bufer, char *s, char c)
 	return (buf_tmp);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	*tmp;
-	char 	**buff;
+	char	**buff;
 	int		str_count;
 
 	if (!s)
@@ -90,6 +90,7 @@ char	**ft_strsplit(char const *s, char c)
 
 int main(void)
 {
-	printf("%s\n", *ft_strsplit("      split       this for   me  !       ", ' '));
+
+	ft_strsplit("***hel****lo**", '*');
 	return (0);
 }

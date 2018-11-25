@@ -14,10 +14,10 @@
 
 char	*ft_strtrim(char const *s)
 {
-	int i;
-	int b;
-	int j;
-	char *str;
+	int		i;
+	int		b;
+	int		j;
+	char	*str;
 
 	i = 0;
 	j = 0;

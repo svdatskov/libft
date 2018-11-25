@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	check(int res, const char *s, int minus)
+static int	check(int res, const char *s, int minus)
 {
 	if (res == 214748364 && *s > '7' && minus == 0)
 		return (-1);
@@ -25,7 +25,7 @@ int	check(int res, const char *s, int minus)
 	return (1);
 }
 
-int	ft_atoi(const char *s)
+int			ft_atoi(const char *s)
 {
 	long	res;
 	int		minus;

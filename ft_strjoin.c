@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/03 17:43:58 by sdatskov          #+#    #+#             */
+/*   Updated: 2018/11/03 17:44:00 by sdatskov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int a;
-	int b;
-	char *str;
-	int i;
-	int j;
+	int		a;
+	int		b;
+	char	*str;
+	int		i;
+	int		j;
 
 	if (!s1 || !s2)
 		return (NULL);

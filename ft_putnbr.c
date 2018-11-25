@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_purnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/04 15:37:38 by sdatskov          #+#    #+#             */
+/*   Updated: 2018/11/04 15:37:40 by sdatskov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_print(int i, int n)
+static void	ft_print(int i, int n)
 {
 	int j;
 
@@ -13,7 +25,7 @@ void	ft_print(int i, int n)
 	}
 }
 
-void	ft_putnbr(int n)
+void		ft_putnbr(int n)
 {
 	int i;
 	int num;
@@ -25,7 +37,7 @@ void	ft_putnbr(int n)
 		i *= 10;
 		num /= 10;
 	}
-	if(n < 0)
+	if (n < 0)
 	{
 		ft_putchar('-');
 		if (n < -2147483647)
