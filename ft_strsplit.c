@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	*ft_copy(char *destptr, char *srcptr, int n)
 {
@@ -86,11 +85,4 @@ char		**ft_strsplit(char const *s, char c)
 	if (buff == NULL)
 		return (NULL);
 	return (ft_address(buff, tmp, c));
-}
-
-int main(void)
-{
-
-	ft_strsplit("***hel****lo**", '*');
-	return (0);
 }
