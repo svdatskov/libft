@@ -6,7 +6,7 @@
 /*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 16:45:43 by sdatskov          #+#    #+#             */
-/*   Updated: 2018/11/03 16:45:44 by sdatskov         ###   ########.fr       */
+/*   Updated: 2018/12/30 18:19:22 by sdatskov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,3 @@ int	ft_strequ(char const *s1, char const *s2)
 	else
 		return (0);
 }
-
-// int main(void)
-// {
-// 	printf("%i\n", ft_strequ("test", "tEst"));
-// 	return (0);
-// }
