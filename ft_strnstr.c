@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char		*ft_strnstr(char *str, char *to_find, size_t len)
 {
@@ -24,7 +25,7 @@ char		*ft_strnstr(char *str, char *to_find, size_t len)
 	while (str[i] && (i + j) < len)
 	{
 		j = 0;
-		while (to_find[j] == str[i + j])
+		while (to_find[j] == str[i + j] && (i + j < len))
 		{
 			j++;
 			if (to_find[j] == '\0')

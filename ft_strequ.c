@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_strequ(char const *s1, char const *s2)
 {
@@ -29,8 +30,14 @@ int	ft_strequ(char const *s1, char const *s2)
 			b++;
 		i++;
 	}
-	if (b == j)
+	if (i == j && b == j)
 		return (1);
 	else
 		return (0);
 }
+
+// int main(void)
+// {
+// 	printf("%i\n", ft_strequ("test", "tEst"));
+// 	return (0);
+// }

@@ -44,11 +44,8 @@ static char	**ft_address(char **bufer, char *s, char c)
 		else
 		{
 			buf_str = s;
-			while (*s && *s != c)
-			{
+			while (*s && *s++ != c)
 				len++;
-				s++;
-			}
 			buf_str2 = malloc(sizeof(char) * (len + 1));
 			if (buf_str2 == NULL)
 				return (NULL);

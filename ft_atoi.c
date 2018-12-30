@@ -32,18 +32,18 @@ int			ft_atoi(const char *s)
 
 	res = 0;
 	minus = 0;
-	while ((*s >= 9 && *s <= 13) || *s == ' ' || *s == '+')
+	while ((*s >= 9 && *s <= 13) || *s == ' ')
 		s++;
-	if (*s == '-')
+	if (*s == '-' || *s == '+')
 	{
+		if(*s == '-')
+			minus++;
 		s++;
-		minus++;
 	}
 	while (*s >= '0' && *s <= '9')
 	{
 		res *= 10;
-		res += *s - 48;
-		s++;
+		res += *s++ - 48;
 		if (check(res, s, minus) == 0)
 			return (0);
 		else if (check(res, s, minus) == -1)
