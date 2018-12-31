@@ -11,62 +11,34 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-static int	check(int res, const char *s, int minus)
-{
-	if (res == 922337203685477580 && *s > '7' && minus == 0)
-		return (-1);
-	else if (res > 922337203685477580 && *s > 7 && minus == 0)
-		return (-1);
-	else if (res == 922337203685477580 && *s > '8' && minus == 1)
-		return (0);
-	else if (res > 922337203685477580 && *s > 7 && minus == 1)
-		return (0);
-	return (1);
-}
 
 int			ft_atoi(const char *s)
 {
-	long	res;
-	int		minus;
+	long		res;
+	long		minus;
 
 	res = 0;
-	minus = 0;
+	minus = 1;
 	while ((*s >= 9 && *s <= 13) || *s == ' ')
 		s++;
 	if (*s == '-' || *s == '+')
 	{
-		if (*s == '-')
-			minus++;
+		if(*s == '-')
+			minus = -1;
 		s++;
 	}
 	while (*s >= '0' && *s <= '9')
 	{
+		if (9223372036854775807 - res < *s - 48)
+		{
+			if (minus == 1)
+				return (-1);
+			else
+				return (0);
+		}
 		res *= 10;
 		res += *s++ - 48;
-		if (check(res, s, minus) == 0)
-			return (0);
-		else if (check(res, s, minus) == -1)
-			return (-1);
 	}
-	// while (*s >= '0' && *s <= '9')
-	// {
-	// 	res = res * 10 + *s - '0';
-	// 	s++;
-	// 	if (check(res, s, minus) == 0)
-	// 		return (0);
-	// 	else if (check(res, s, minus) == -1)
-	// 		return (-1);
-	// }
-	if (minus == 1)
-		res *= -1;
-	return (res);
-}
-
-int main(void)
-{
-	printf("%i\n", ft_atoi("100000000000000000000"));
-	printf("%i\n", atoi("10000000000000000000"));
-	return (0);
+	
+	return (res * minus);
 }
