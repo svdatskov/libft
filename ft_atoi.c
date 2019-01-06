@@ -23,7 +23,7 @@ int			ft_atoi(const char *s)
 		s++;
 	if (*s == '-' || *s == '+')
 	{
-		if(*s == '-')
+		if (*s == '-')
 			minus = -1;
 		s++;
 	}
@@ -36,9 +36,7 @@ int			ft_atoi(const char *s)
 			else
 				return (0);
 		}
-		res *= 10;
-		res += *s++ - 48;
+		res = (res * 10) + (*s++ - 48);
 	}
-	
 	return (res * minus);
 }

@@ -11,25 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char		*ft_strnstr(char *str, char *to_find, size_t len)
+char		*ft_strnstr(const char *s, const char *find, size_t len)
 {
 	size_t i;
 	size_t j;
 
 	i = 0;
 	j = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] && (i + j) < len)
+	if (find[0] == '\0')
+		return ((char *)s);
+	while (s[i] && (i + j) < len)
 	{
 		j = 0;
-		while (to_find[j] == str[i + j] && (i + j < len))
+		while (find[j] == s[i + j] && (i + j < len))
 		{
 			j++;
-			if (to_find[j] == '\0')
-				return (&str[i]);
+			if (find[j] == '\0')
+				return ((char *)&s[i]);
 		}
 		i++;
 	}

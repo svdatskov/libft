@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdatskov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/16 13:00:02 by sdatskov          #+#    #+#             */
-/*   Updated: 2018/10/24 16:28:27 by sdatskov         ###   ########.fr       */
+/*   Created: 2019/01/06 12:08:39 by sdatskov          #+#    #+#             */
+/*   Updated: 2019/01/06 12:08:41 by sdatskov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *src)
+size_t		ft_strnlen(const char *str, size_t maxlen)
 {
-	char *c;
+	size_t i;
 
-	c = (char *)malloc(ft_strlen(src) + 1);
-	if (c == 0)
-		return (0);
-	ft_strcpy(c, src);
-	return (c);
+	i = 0;
+	while (*str)
+	{
+		i++;
+		str++;
+	}
+	if (i < maxlen)
+		return (i);
+	else
+		return (maxlen);
 }
